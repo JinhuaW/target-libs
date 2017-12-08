@@ -13,13 +13,6 @@ install_SUBDIRS = $(addprefix install_,$(SUBDIRS))
 #
 all: build
 
-shared_library: build
-
-static_library: build
-	$(AR) -cqv $(ARCHIVE) $(shell ls */*.o)
-
-build_remotemsg: build_handle_protector
-
 build: $(build_SUBDIRS)
 
 $(build_SUBDIRS):
